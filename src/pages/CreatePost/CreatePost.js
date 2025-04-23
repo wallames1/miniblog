@@ -4,16 +4,11 @@ import {useState} from "react"
 import {useNavigate} from "react-router-dom"
 import {useAuthValue} from "../../context/AuthContext"
 import { useInsertDocument } from '../../hooks/useinsertDocuments'
-import { storage } from '../../firebase/config'
-import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
 
 const CreatePost = () => {
 
   const [title, setTitle] = useState("")
-  // Remove unused state if not needed
-  const [image, setImage] = useState(null)
-  // Remove imageURL state if not needed
-  // const [imageURL, setImageURL] = useState("")
+  const [image, setImage] = useState("")
   const [body, setBody] = useState("")
   const [tags, setTags] = useState([])
   const [formError, setFormError] = useState ("")
@@ -23,48 +18,41 @@ const CreatePost = () => {
 
   const navigate = useNavigate()
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     setFormError("")
 
-    try {
-      // Validate inputs
-      if(!title || !image || !tags || !body){
-        setFormError("Por Favor, preencha todos os campos")
-        return
-      }
-
-      // Create tags array
-      const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase())
-
-      // Create a unique filename
-      const timestamp = new Date().getTime()
-      const filename = `${timestamp}_${image.name}`
-      const storageRef = ref(storage, `images/${filename}`)
-
-      // Upload the file
-      await uploadBytesResumable(storageRef, image)
-      
-      // Get the download URL
-      const downloadURL = await getDownloadURL(storageRef)
-
-      // Create post document
-      await insertDocument({
-        title,
-        image: downloadURL,
-        body,
-        tagsArray,
-        uid: user.uid,
-        createdBy: user.displayName,
-      })
-
-      // Redirect to home page
-      navigate("/")
-    
-    } catch (error) {
-      console.error("Error details:", error)
-      setFormError("Erro ao criar post: " + error.message)
+    //validar url da img
+    try{
+      new URL(image)
+    }catch (error){
+      setFormError("A imagem precisa dser uma URL")
     }
+
+
+    //criar array de tags
+    const tagsArray = tags.split (",").map((tag) => tag.trim().toLowerCase())
+
+    //checar todos os valores
+    if(!title || !image || !tags || !body){
+      setFormError("Por Favor, preencha todos os campos")
+    }
+
+    if(formError) return
+
+    insertDocument({
+      title,
+      image,
+      body,
+      tagsArray,
+      uid: user.uid,
+      createdBy: user.displayName,
+
+    })
+
+    //redirect to home page
+
+    navigate("/")
   }
 
   return (
@@ -83,14 +71,14 @@ const CreatePost = () => {
           value={title} />
         </label>
         <label htmlFor="">
-          <span>Imagem:</span>
+          <span>Url:</span>
           <input 
-            type="file" 
-            name='image' 
-            required 
-            accept="image/*"
-            onChange={(e) => setImage(e.target.files[0])}
-          />
+          type="text" 
+          name='image' 
+          required 
+          placeholder='Insira sua Imagem' 
+          onChange={(e) => setImage(e.target.value)}
+          value={image} />
         </label>
         <label htmlFor="">
           <span>Conteúdo:</span>
