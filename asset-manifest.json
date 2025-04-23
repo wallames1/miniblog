@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "//wallames1.github.io/miniblog/static/css/main.94f1be8d.css",
+    "main.css": "//wallames1.github.io/miniblog/static/css/main.0850608e.css",
     "main.js": "//wallames1.github.io/miniblog/static/js/main.69e68695.js",
     "static/js/453.75fbf791.chunk.js": "//wallames1.github.io/miniblog/static/js/453.75fbf791.chunk.js",
     "index.html": "//wallames1.github.io/miniblog/index.html",
-    "main.94f1be8d.css.map": "//wallames1.github.io/miniblog/static/css/main.94f1be8d.css.map",
+    "main.0850608e.css.map": "//wallames1.github.io/miniblog/static/css/main.0850608e.css.map",
     "main.69e68695.js.map": "//wallames1.github.io/miniblog/static/js/main.69e68695.js.map",
     "453.75fbf791.chunk.js.map": "//wallames1.github.io/miniblog/static/js/453.75fbf791.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.94f1be8d.css",
+    "static/css/main.0850608e.css",
     "static/js/main.69e68695.js"
   ]
 }
