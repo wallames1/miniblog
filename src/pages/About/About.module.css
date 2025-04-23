@@ -1,17 +1,59 @@
-.about{
+.about {
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 1em;
+    margin-top: 100px;
 }
 
-.about p{
+/* Parágrafos já estão com boa responsividade */
+.about p {
     color: #aaa;
     margin-bottom: 2em;
+    max-width: 90%;
+    word-wrap: break-word;
 }
 
+/* Botões/links */
 .about a {
     display: block;
     margin-top: 15px;
     padding: 10px 15px;
+    background-color: #eee;
+    color: #333;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.about a:hover {
+    background-color: #ddd;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .about {
+        padding: 2em 1em;
+    }
+
+    .about p {
+        font-size: 0.95em;
+    }
+
+    .about a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .about p {
+        font-size: 0.9em;
+    }
+
+    .about a {
+        font-size: 0.9em;
+        padding: 12px;
+    }
 }

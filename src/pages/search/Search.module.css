@@ -3,17 +3,46 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
+    padding: 2em 1em;
+    text-align: center;
+    margin-top: 100px;
 }
 
-.search_container h1{
+.search_container h1 {
     margin-bottom: 1em;
+    font-size: 2em;
 }
 
 .search_container p {
     margin-bottom: 30px;
+    max-width: 90%;
+    font-size: 1em;
+    color: #666;
 }
 
-.noposts{
+/* No posts */
+.noposts {
     text-align: center;
+    padding: 1em;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .search_container h1 {
+        font-size: 1.6em;
+    }
+
+    .search_container p {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    .search_container h1 {
+        font-size: 1.4em;
+    }
+
+    .search_container p {
+        font-size: 0.9em;
+    }
 }

@@ -1,20 +1,51 @@
-.post_container{
+.post_container {
     text-align: center;
+    padding: 2em 1em;
+    margin-top: 100px;
 }
 
-.post_container h3{
-    margin-bottom: .2em;
+.post_container h3 {
+    margin-bottom: 0.2em;
+    font-size: 1.5em;
 }
 
-.post_container .tags{
+.post_container .tags {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-top: 1em;
 }
 
-.tags p{
+.tags p {
     margin-right: 1em;
+    font-size: 1em;
+    color: #444;
 }
 
 .tags span {
     font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .post_container h3 {
+        font-size: 1.3em;
+    }
+
+    .tags p {
+        margin-right: 0.8em;
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    .post_container h3 {
+        font-size: 1.1em;
+    }
+
+    .tags p {
+        margin-right: 0.5em;
+        font-size: 0.9em;
+    }
 }

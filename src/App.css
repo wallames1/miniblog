@@ -1,5 +1,29 @@
-.container{
+.container {
   min-height: 60vh;
-  margin-bottom: 5em ;
+  margin-bottom: 5em;
+  padding: 0 1em;
+  
 }
 
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    margin-bottom: 4em;
+    min-height: 60vh;
+    margin: 0 auto; /* Centraliza o container */
+    width: 100%; /* Garante que o container tenha 100% de largura disponível */
+    max-width: 1200px; /* Limite de largura para telas grandes, pode ser ajustado */
+    padding: 0 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin-bottom: 3em;
+    min-height: 60vh;
+    margin: 0 auto; /* Centraliza o container */
+    width: 100%; /* Garante que o container tenha 100% de largura disponível */
+    max-width: 1200px; /* Limite de largura para telas grandes, pode ser ajustado */
+    padding: 0 1em;
+  }
+}

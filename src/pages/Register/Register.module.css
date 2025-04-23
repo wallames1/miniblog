@@ -1,6 +1,26 @@
 .register {
     text-align: center;
+    padding: 2em 1em;
+    margin-top: 100px;
 }
+
 .register p {
-    color: #aaa
+    color: #aaa;
+    font-size: 1em;
+    max-width: 90%;
+    margin: 0 auto;
+    word-wrap: break-word;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .register p {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    .register p {
+        font-size: 0.9em;
+    }
 }

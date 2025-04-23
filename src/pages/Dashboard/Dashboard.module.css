@@ -1,56 +1,113 @@
-.dashboard{
+.dashboard {
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+    padding: 2em 1em;
+    margin-top: 100px;
 }
-.dashboard h2{
+
+.dashboard h2 {
     font-size: 2.2em;
     margin-bottom: .5em;
-
-    
 }
-.dashboard p{
+
+.dashboard p {
     color: #AAA;
     margin-bottom: 1em;
-    
 }
-.noposts{
+
+.noposts {
     text-align: center;
 }
-.noposts p{
+
+.noposts p {
     margin-bottom: 1.5em;
 }
-.noposts a{
-    padding: 10px 25px;
-}
-.post_header, .post_row{
 
+.noposts a {
+    padding: 10px 25px;
+    background-color: #eee;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+.noposts a:hover {
+    background-color: #ddd;
+}
+
+.post_header,
+.post_row {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 80%;
     padding: 1%;
-}
-.post_header {
-   
-    font-weight: bold;
-    border-bottom: 2px solid #CCC ;
-   
+    gap: 1em;
 }
 
-.post_row{
-    
-    align-items: center;
+.post_header {
+    font-weight: bold;
+    border-bottom: 2px solid #CCC;
+}
+
+.post_row {
     border-bottom: 1px solid #EEE;
+    flex-wrap: wrap;
 }
-.post_row p{
+
+.post_row p {
     color: #000;
+    flex: 1 1 auto;
+    text-align: left;
 }
-.post_row button,.post_row a{
+
+.post_row button,
+.post_row a {
     margin: 0 5px;
     height: 30px;
     width: 100px;
     font-size: 0.7em;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .dashboard h2 {
+        font-size: 1.8em;
+    }
+
+    .post_header,
+    .post_row {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 95%;
+        text-align: left;
+    }
+
+    .post_row button,
+    .post_row a {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard h2 {
+        font-size: 1.5em;
+    }
+
+    .dashboard p,
+    .noposts p {
+        font-size: 0.9em;
+    }
+
+    .post_row button,
+    .post_row a {
+        font-size: 0.8em;
+        height: auto;
+        padding: 10px;
+    }
 }

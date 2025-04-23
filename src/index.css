@@ -1,8 +1,9 @@
 body {
- background-color: #f6fcff ;
- padding: 0;
- margin: 0;
- font-family: "Montserrat", sans-serif;
+  background-color: #f6fcff;
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 80px; /* Ajuste conforme necessário para a altura do seu navbar */
 }
 
 input::placeholder,
@@ -15,6 +16,48 @@ input:focus,
 textarea:focus {
   outline: none;
 }
+/* Navbar */
+nav {
+  width: 100%; /* Garante que o navbar ocupe toda a largura da tela */
+  position: fixed; /* Para que o navbar fique fixo no topo */
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff; /* Altere conforme necessário */
+  z-index: 1000; /* Garante que o navbar fique acima de outros elementos */
+  padding: 1em;
+  box-sizing: border-box; /* Garante que o padding não quebre o layout */
+  
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 0;
+  list-style: none;
+}
+
+nav a {
+  padding: 0.8em 1.2em;
+  text-decoration: none;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #555; /* Altere para a cor desejada no hover */
+}
+
+/* Form styles */
+form {
+  max-width: 40%;
+  margin: 0 auto;
+  padding: 2em 1em;
+}
+
+/* Estilos restantes mantidos do seu código... */
 
 
 a,
@@ -28,23 +71,25 @@ nav button {
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
 }
+
 a:hover,
 nav button:hover {
   color: #bbb;
 }
 
 /*form styles*/
-form{
+form {
   max-width: 40%;
   margin: 0 auto;
-
+  padding: 2em 1em;
 }
-label {
 
+label {
   display: flex;
   flex-direction: column;
   margin-bottom: 1em;
 }
+
 label span {
   margin-bottom: .3em;
   font-weight: bold;
@@ -58,6 +103,7 @@ textarea {
   border-bottom: 1px solid #ccc;
   padding: .8em 0;
   background-color: transparent;
+  width: 100%;
 }
 
 .btn {
@@ -71,13 +117,14 @@ textarea {
   border: none;
   padding: 10px 5px;
   font-size: 1em;
-
 }
-.btn.btn-dark{
+
+.btn.btn-dark {
   background-color: #000;
   border-radius: 0;
 }
-.btn.btn-outline{
+
+.btn.btn-outline {
   background-color: transparent;
   border-radius: 0;
   color: #000;
@@ -85,25 +132,135 @@ textarea {
   padding: 7px 30px;
 }
 
-.btn:hover{
+.btn:hover {
   background-color: #0f730c;
   color: #fff;
 }
-.btn.btn-outline:hover{
+
+.btn.btn-outline:hover {
   background-color: #000;
 }
+
 .btn.btn-danger:hover {
   background-color: #dc3545;
 }
 
-button[disabled]{
+button[disabled] {
   background-color: #aaa;
-
 }
+
 .container .error {
   color: #721c24;
   background-color: #f8d7da;
   border: 1px solid #f5c6cb;
   padding: 5px;
   border-radius: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  form {
+    max-width: 70%;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 0.9em;
+  }
+
+  .btn.btn-outline {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .container .error {
+    font-size: 0.9em;
+  }
+  /* Navbar */
+nav {
+  width: 100%; /* Garante que o navbar ocupe toda a largura da tela */
+  position: fixed; /* Para que o navbar fique fixo no topo */
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff; /* Altere conforme necessário */
+  z-index: 1000; /* Garante que o navbar fique acima de outros elementos */
+  padding: 1em;
+  box-sizing: border-box; /* Garante que o padding não quebre o layout */
+  padding: 1em;
+  
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 0;
+  list-style: none;
+}
+
+nav a {
+  padding: 0.8em 1.2em;
+  text-decoration: none;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #555; /* Altere para a cor desejada no hover */
+}
+
+}
+
+@media (max-width: 480px) {
+  form {
+    max-width: 90%;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 14px 0;
+    font-size: 0.8em;
+  }
+
+  .container .error {
+    font-size: 0.8em;
+  }
+  /* Navbar */
+nav {
+  width: 100%; /* Garante que o navbar ocupe toda a largura da tela */
+  position: fixed; /* Para que o navbar fique fixo no topo */
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff; /* Altere conforme necessário */
+  z-index: 1000; /* Garante que o navbar fique acima de outros elementos */
+  padding: 1em;
+  box-sizing: border-box; /* Garante que o padding não quebre o layout */
+  padding: 1em;
+  
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 0;
+  list-style: none;
+}
+
+nav a {
+  padding: 0.8em 1.2em;
+  text-decoration: none;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #555; /* Altere para a cor desejada no hover */
+}
+
 }
