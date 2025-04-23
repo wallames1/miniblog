@@ -1,0 +1,16 @@
+[
+    {
+      "origin": [
+        "http://localhost:3000",
+        "https://seu-site-de-producao.com"
+      ],
+      "method": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "maxAgeSeconds": 3600
+    }
+  ]
+  
